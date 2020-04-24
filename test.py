@@ -11,15 +11,21 @@ ser = serial.Serial(port='COM3', baudrate=115200, bytesize=serial.EIGHTBITS, par
 # Assert serial connection is availible
 assert ser.isOpen(), "Serial connection is not availible"
 
+stringLine = ""
+
 if(ser.isOpen()):
     try:
         while True:
             # Read data
-            data = ser.read()
+            character = ser.read()
+            if (character == "."):
+                # Write data to textfile
+                with open(fileNames[0], "a") as myfile:
+                    myfile.write(str(stringLine) + '\n')
+            else:
+                stringLine += character
+
             
-            # Write data to textfile
-            with open(fileNames[0], "a") as myfile:
-                myfile.write(str(data) + '\n')
     # Catch error
     except Exception:
         print('Error exception')

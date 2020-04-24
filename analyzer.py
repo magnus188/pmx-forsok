@@ -8,7 +8,6 @@ maxLength = 1000
 
 # Iterate through filepaths
 for path in fileNames:
-
     # Load textfile
     datas = pl.loadtxt(path, int)
     # Remova datapoints which are 0
@@ -16,6 +15,6 @@ for path in fileNames:
     # Calculte average score
     average = sum(fixedData[:maxLength-1])/len(fixedData[:maxLength-1])
 
-    # Write average to new textfile
+    # Write average to new textfile 'gjennomsnitt.txt'
     with open("gjennomsnitt.txt", "a") as myfile:
         myfile.write(path.split('/')[1].split('.')[0]+ ': ' + str(round(average, 3)) + '\n')
