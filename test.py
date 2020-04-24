@@ -9,14 +9,14 @@ fileNames = ['data/3v.txt', 'data/4,5v.txt', 'data/6v.txt',
 ser = serial.Serial(port='COM3', baudrate=115200, bytesize=serial.EIGHTBITS, parity=serial.PARITY_NONE, timeout=2)
 
 # Assert serial connection is availible
-assert ser.isOpen()
+assert ser.isOpen(), "Serial connection is not availible"
 
 if(ser.isOpen()):
     try:
         while True:
             # Read data
             data = ser.read()
-            print(data)
+            
             # Write data to textfile
             with open(fileNames[0], "a") as myfile:
                 myfile.write(str(data) + '\n')
