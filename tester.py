@@ -22,11 +22,13 @@ if(ser.isOpen()):
                 value.append(text)
             if text == ".":
                 hor = "".join(value)
+                
+                with open('12volt.txt', 'a') as myfile:
+                    myfile.write("\n"+str(hor))
                 print(hor)
                 value.clear()
 
-            """with open("test2.txt", "a") as myfile:
-                myfile.write(str(text) + '\n')"""
+
     except Exception:
         print('Error exception')
 else:
