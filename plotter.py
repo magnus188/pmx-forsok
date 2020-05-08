@@ -10,9 +10,12 @@ myFile = pl.loadtxt(filnavn, float, delimiter=";")
 voltage = myFile[:,0]
 magnetic_force = myFile[:,1]
 
+print(voltage)
+print(magnetic_force)
 
-# TODO: Update values
-RADIUS = 3
+
+# Radius of coil
+RADIUS = 1
 
 # Calculate model
 # FIXME: Models need current but gets voltage
