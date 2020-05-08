@@ -1,7 +1,7 @@
 import pylab as pl
 
 # List of pathnames
-fileNames = ['data/3v.txt', 'data/4,5v.txt', 'data/6v.txt']
+fileNames = ['data/3.txt', 'data/4.5.txt', 'data/6.txt']
 
 # Max length of datapoints in files to be read
 maxLength = 24

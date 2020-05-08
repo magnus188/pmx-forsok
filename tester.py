@@ -22,6 +22,9 @@ if(ser.isOpen()):
                 value.append(text)
             if text == ".":
                 hor = "".join(value)
+                
+                with open('3.txt', 'a') as myfile:
+                    myfile.write("\n"+str(hor))
                 print(hor)
                 value.clear()
 
