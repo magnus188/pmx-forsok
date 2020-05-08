@@ -25,8 +25,6 @@ if(ser.isOpen()):
                 print(hor)
                 value.clear()
 
-            """with open("test2.txt", "a") as myfile:
-                myfile.write(str(text) + '\n')"""
     except Exception:
         print('Error exception')
 else:

@@ -3,12 +3,13 @@ import math
 from getworkingpath import *
 
 # Open file
-filnavn = getworkingpath()+'data/gjennomsnitt.csv'
+filnavn = getworkingpath()+'/data/gjennomsnitt.csv'
 myFile = pl.loadtxt(filnavn, float, delimiter=";")
 
 # Read file
 voltage = myFile[:,0]
 magnetic_force = myFile[:,1]
+
 
 # TODO: Update values
 RADIUS = 3

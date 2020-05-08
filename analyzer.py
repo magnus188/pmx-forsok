@@ -4,7 +4,7 @@ import pylab as pl
 fileNames = ['data/3v.txt', 'data/4,5v.txt', 'data/6v.txt']
 
 # Max length of datapoints in files to be read
-maxLength = 1000
+maxLength = 24
 
 # Iterate through filepaths
 for path in fileNames:
@@ -16,5 +16,5 @@ for path in fileNames:
     average = sum(fixedData[:maxLength-1])/len(fixedData[:maxLength-1])
 
     # Write average to new textfile 'gjennomsnitt.txt'
-    with open("gjennomsnitt.txt", "a") as myfile:
+    with open("data/gjennomsnitt.csv", "a") as myfile:
         myfile.write(path.split('/')[1].split('.')[0]+ '; ' + str(round(average, 3)) + '\n')
