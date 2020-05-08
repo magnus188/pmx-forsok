@@ -8,15 +8,14 @@ myFile = pl.loadtxt(filnavn, float, delimiter=";")
 
 # Read file
 voltage = myFile[:,0]
-magnetic_force = myFile[:,1]
+magnetic_force = myFile[:,1]*10**-6
 
-
-# TODO: Update values
-RADIUS = 3
+# Constants
+RADIUS = 1
+resistance = 0.0004 # Measured value
 
 # Calculate model
-# FIXME: Models need current but gets voltage
-model = [(4*math.pi*(10**-7)*n)/(2*math.pi*RADIUS) for n in voltage]
+model = [(4*math.pi*(10**-7)*n)/(2*math.pi*RADIUS*resistance) for n in voltage]
 
 # Plot values
 pl.plot(voltage, magnetic_force, label="Snitt målte verdier")
