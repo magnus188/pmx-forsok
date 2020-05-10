@@ -8,6 +8,7 @@ myFile = pl.loadtxt(filnavn, float, delimiter=";")
 
 # Read file
 voltage = myFile[:,0]
+
 magnetic_force = myFile[:,1]*10**-6
 
 # Constants
@@ -26,7 +27,7 @@ pl.plot(voltage, model, label="Model")
 # Add title and labels
 pl.title("Magnetisk styrke")
 pl.xlabel('Spenning (V)')
-pl.ylabel('Magnetfeltstyrke (T)')
+pl.ylabel('Magnetfeltstyrke (µT)')
 pl.legend()
 
 # Show plot
